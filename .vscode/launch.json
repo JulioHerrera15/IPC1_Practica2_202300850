@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "org.openjfx/org.openjfx.App",
+            "projectName": "practica2"
+        },
+        {
+            "name": "Launch App",
+            "type": "java",
+            "request": "launch",
+            "mainClass": "org.openjfx.App",
+            "projectName": "myproject",
+            "modulePaths": [
+                "C:\\Users\\HP\\.m2\\repository\\com\\opencsv\\opencsv\\5.9\\opencsv-5.9.jar"
+            ],
+            "classPaths": [
+                "C:\\Users\\HP\\.m2\\repository\\com\\opencsv\\opencsv\\5.9\\opencsv-5.9.jar"
+            ]
+        }
+    ]
+}
