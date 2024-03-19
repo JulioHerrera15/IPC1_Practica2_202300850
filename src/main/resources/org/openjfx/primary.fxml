@@ -104,10 +104,10 @@
                         </VBox>
                         <TableView fx:id="tablaRecorridos" nodeOrientation="LEFT_TO_RIGHT" prefHeight="511.0" prefWidth="581.0">
                           <columns>
-                            <TableColumn id="idColumna" fx:id="idColumna" prefWidth="75.0" text="ID" />                            
-                            <TableColumn id="inicioColumna" fx:id="inicioColumna" prefWidth="75.0" text="Inicio" />
+                              <TableColumn id="idColumna" fx:id="idColumna" prefWidth="75.0" text="ID" />                            
+                              <TableColumn id="inicioColumna" fx:id="inicioColumna" prefWidth="75.0" text="Inicio" />
                               <TableColumn id="finColumna" fx:id="finColumna" prefWidth="75.0" text="Fin" />
-                              <TableColumn prefWidth="97.66665649414062" text="Distancia (km)" />
+                              <TableColumn id="distaciaColumna" fx:id="distanciaColumna" prefWidth="97.66665649414062" text="Distancia (km)" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

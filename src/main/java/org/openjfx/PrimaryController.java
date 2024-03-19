@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableColumn;
 import javafx.stage.FileChooser;
 
 
@@ -29,6 +31,11 @@ public class PrimaryController {
     @FXML
     private TableView<Recorrido> tablaRecorridos;
     private ObservableList<Recorrido> recorridos;
+    private TableColumn<Recorrido, String> idColumna;
+    private TableColumn<Recorrido, String> inicioColumna;
+    private TableColumn<Recorrido, String> finColumna;
+    private TableColumn<Recorrido, String> distanciaColumna;    
+
 
     @FXML
     private void loadTableData(File file) {
@@ -47,6 +54,10 @@ public class PrimaryController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        idColumna.setCellValueFactory(new PropertyValueFactory<>("id"));
+        inicioColumna.setCellValueFactory(new PropertyValueFactory<>("inicio"));
+        finColumna.setCellValueFactory(new PropertyValueFactory<>("fin"));
+        distanciaColumna.setCellValueFactory(new PropertyValueFactory<>("distancia"));
         
         // Paso 4: Asigna la ObservableList a la tabla
         tablaRecorridos.setItems(recorridos);
