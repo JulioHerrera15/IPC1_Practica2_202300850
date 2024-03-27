@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane id="BorderPane" minHeight="-Infinity" prefHeight="600.0" prefWidth="1100.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.TertiaryController">
+   <left>
+      <AnchorPane fx:id="sidebar" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="150.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+            <Button fx:id="toggleButton" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" styleClass="botonConIcono">
+               <graphic>
+                     <FontIcon iconLiteral="fas-bars" iconSize="20" styleClass="font-icon" wrappingWidth="21.0" />
+               </graphic>
+            </Button>
+               <VBox fx:id="vbox" layoutX="15.0" layoutY="248.0">
+                     <children>
+                        <Button fx:id="homeButton" maxWidth="106.0" onAction="#initializeHomeButton" prefHeight="20.0" prefWidth="106.0" styleClass="botonConIcono">
+                           <graphic>
+                                 <HBox spacing="5">
+                                    <FontIcon iconLiteral="fas-home" iconSize="20" styleClass="font-icon" textAlignment="CENTER" wrappingWidth="21.0" />
+                                    <Label fx:id="homeLabel" prefHeight="20.0" prefWidth="34.0" styleClass="font-icon" text="Inicio">
+                                          <HBox.margin>
+                                             <Insets left="5.0" />
+                                          </HBox.margin>
+                                          <font>
+                                             <Font name="Segoe UI Bold" size="12.0" />
+                                          </font>
+                                    </Label>
+                                 </HBox>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="plusButton" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="248.0" maxWidth="128.0" onAction="#initializePlusButton" prefHeight="20.0" prefWidth="128.0" styleClass="botonConIcono">
+                           <graphic>
+                                 <HBox spacing="5">
+                                    <FontIcon iconLiteral="fas-plus" iconSize="20" styleClass="font-icon" textAlignment="CENTER" wrappingWidth="21.0">
+                                       <VBox.margin>
+                                             <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </FontIcon>
+                                    <Label fx:id="plusLabel" contentDisplay="CENTER" prefHeight="20.0" prefWidth="51.0" styleClass="font-icon" text="Agregar">
+                                          <HBox.margin>
+                                             <Insets left="5.0" />
+                                          </HBox.margin>
+                                          <font>
+                                             <Font name="Segoe UI Bold" size="12.0" />
+                                          </font>
+                                    </Label>
+                                 </HBox>
+                           </graphic>
+                           <VBox.margin>
+                                 <Insets top="15.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="carButton" minWidth="150.0" mnemonicParsing="false" onAction="#initializeCarButton" styleClass="botonConIcono" stylesheets="@stylesheet.css">
+                           <graphic>
+                                 <HBox spacing="5.0">
+                                    <FontIcon iconColor="#ff8800" iconLiteral="fas-car" iconSize="20" styleClass="font-icon" textAlignment="CENTER" wrappingWidth="21.0" />
+                                    <Label fx:id="carLabel" prefHeight="20.0" prefWidth="38.0" text="Viajes" textAlignment="CENTER" textFill="#ff8800">
+                                          <HBox.margin>
+                                             <Insets left="5.0" />
+                                          </HBox.margin>
+                                          <font>
+                                             <Font name="Segoe UI Bold" size="12.0" />
+                                          </font>
+                                    </Label>
+                                 </HBox>
+                           </graphic>
+                           <VBox.margin>
+                                 <Insets top="15.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="clockButton" maxWidth="122.0" mnemonicParsing="false" onAction="#initializeClockButton" prefHeight="20.0" prefWidth="122.0" styleClass="botonConIcono" stylesheets="@stylesheet.css">
+                           <graphic>
+                                 <HBox prefHeight="20.0" prefWidth="91.0" spacing="5">
+                                    <FontIcon iconLiteral="fas-clock" iconSize="20" styleClass="font-icon" textAlignment="CENTER" wrappingWidth="21.0" />
+                                    <Label fx:id="clockLabel" contentDisplay="CENTER" prefHeight="19.0" prefWidth="53.0" styleClass="font-icon" text="Historial" textAlignment="CENTER">
+                                          <HBox.margin>
+                                             <Insets left="5.0" />
+                                          </HBox.margin>
+                                          <font>
+                                             <Font name="Segoe UI Bold" size="12.0" />
+                                          </font>
+                                    </Label>
+                                 </HBox>
+                           </graphic>
+                           <VBox.margin>
+                                 <Insets top="15.0" />
+                           </VBox.margin>
+                        </Button>                        
+                  </children>
+               </VBox>
+            <Circle fx:id="circle" fill="WHITE" layoutX="26.0" layoutY="544.0" radius="18.0" stroke="#c1c1c1" strokeType="INSIDE" />
+                     <Label fx:id="userLabel" layoutX="51.0" layoutY="537.0" text="Usuario">
+                        <font>
+                           <Font name="Segoe UI Bold" size="12.0" />
+                        </font>
+                     </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" style="-fx-background-color: #f3f3f3;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="59.0" layoutY="7.0" prefHeight="597.0" prefWidth="893.0" styleClass="pane" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label style="" text="Bienvenido a UDrive" textAlignment="CENTER" textFill="#ff8800">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator orientation="VERTICAL" />
+                        <Label style="" text="Inicio de viajes" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="143.0" />
+                  <Button id="iniciarTodosLosViajes" fx:id="iniciarTodosLosViajes" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#iniciarTodosLosViajes" prefHeight="39.0" prefWidth="202.0" styleClass="botonCargar" text="Iniciar todos los viajes">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="156.0" prefWidth="891.0" spacing="10" styleClass="diagramaViajes" stylesheets="@stylesheet.css">
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoInicialLabel1" fx:id="puntoInicial1" text="Punto inicial">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="RED" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets left="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox HBox.hgrow="ALWAYS">
+                        <children>
+                              <HBox alignment="CENTER" minWidth="-Infinity" prefHeight="25.0" prefWidth="729.0">
+                                 <children>
+                                 <Label id="distanciaLabel3" fx:id="gasolinaLabel1" text="Gasolina actual: - gal">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                    <Label id="distanciaLabel1" fx:id="distanciaLabel1" text="Distancia: - km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Label>                                    
+                                    <Button fx:id="iniciarViaje1Button" onAction="#iniciarViaje1" styleClass="botonCargar" text="Iniciar viaje">
+                                    <HBox.margin>
+                                       <Insets left="10.0" right="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Button>
+                                 <Label id="distanciaLabel1" fx:id="kmRecorridos1" text="Kilómetros recorridos: 0 km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                 <Button id="regresarViaje1" fx:id="regresarViaje1" disable="true" mnemonicParsing="false" onAction="#regresarViaje1" styleClass="botonCargar" text="Regresar">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Button>
+                                 <Button id="regresarViaje1" fx:id="recargarGasolina1" disable="true" mnemonicParsing="false" styleClass="botonCargar" text="Recargar Gasolina">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                 </Button>
+                                 </children>
+                              </HBox>
+                              <HBox id="viaje1" fx:id="viaje1" alignment="CENTER_LEFT" prefHeight="125.0" prefWidth="694.0" />
+                        </children>
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoFinalLabel1" fx:id="puntoFinal1" text="Punto final">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="GREEN" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="156.0" prefWidth="891.0" spacing="10" styleClass="diagramaViajes" stylesheets="@stylesheet.css">
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoInicialLabel2" fx:id="puntoInicial2" text="Punto inicial">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="RED" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets left="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox HBox.hgrow="ALWAYS">
+                        <children>
+                              <HBox alignment="CENTER" minWidth="-Infinity">
+                                 <children>
+                                 <Label id="distanciaLabel3" fx:id="gasolinaLabel2" text="Gasolina actual: - gal">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                    <Label id="distanciaLabel2" fx:id="distanciaLabel2" text="Distancia: - km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Label>                                    
+                                    <Button fx:id="iniciarViaje2Button" onAction="#iniciarViaje2" styleClass="botonCargar" text="Iniciar viaje">
+                                    <HBox.margin>
+                                       <Insets left="10.0" right="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Button>
+                                 <Label id="distanciaLabel2" fx:id="kmRecorridos2" text="Kilómetros recorridos: 0 km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                 <Button id="regresarViaje2" fx:id="regresarViaje2" disable="true" mnemonicParsing="false" onAction="#regresarViaje2" styleClass="botonCargar" text="Regresar">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Button>
+                                 <Button id="regresarViaje2" fx:id="recargarGasolina2" disable="true" mnemonicParsing="false" styleClass="botonCargar" text="Recargar Gasolina">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                 </Button>
+                                 </children>
+                              </HBox>
+                              <HBox id="viaje2" fx:id="viaje2" alignment="CENTER_LEFT" prefHeight="125.0" prefWidth="694.0" />
+                        </children>
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoFinalLabel2" fx:id="puntoFinal2" minWidth="-Infinity" text="Punto final">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="GREEN" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="156.0" prefWidth="891.0" spacing="10" styleClass="diagramaViajes" stylesheets="@stylesheet.css">
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoInicialLabel3" fx:id="puntoInicial3" text="Punto inicial">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="RED" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets left="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox HBox.hgrow="ALWAYS">
+                        <children>
+                              <HBox alignment="CENTER" minWidth="-Infinity">
+                                 <children>
+                                 <Label id="distanciaLabel3" fx:id="gasolinaLabel3" text="Gasolina actual: - gal">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                    <Label id="distanciaLabel3" fx:id="distanciaLabel3" text="Distancia: - km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Label>                                    
+                                    <Button fx:id="iniciarViaje3Button" onAction="#iniciarViaje3" styleClass="botonCargar" text="Iniciar viaje">
+                                    <HBox.margin>
+                                       <Insets left="10.0" right="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font></Button>
+                                 <Label id="distanciaLabel3" fx:id="kmRecorridos3" text="Kilómetros recorridos: 0 km">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Label>
+                                 <Button id="regresarViaje3" fx:id="regresarViaje3" disable="true" mnemonicParsing="false" onAction="#regresarViaje3" styleClass="botonCargar" text="Regresar">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                       <Insets right="10.0" />
+                                    </HBox.margin>
+                                 </Button>
+                                 <Button id="regresarViaje3" fx:id="recargarGasolina3" disable="true" mnemonicParsing="false" styleClass="botonCargar" text="Recargar Gasolina">
+                                    <font>
+                                       <Font name="Segoe UI Bold" size="12.0" />
+                                    </font>
+                                 </Button>
+                                 </children>
+                              </HBox>
+                              <HBox id="viaje3" fx:id="viaje3" alignment="CENTER_LEFT" prefHeight="125.0" prefWidth="694.0" />
+                        </children>
+                     </VBox>
+                     <VBox alignment="CENTER" minWidth="-Infinity">
+                        <children>
+                              <Label id="puntoFinalLabel3" fx:id="puntoFinal3" text="Punto final">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                              <font>
+                                 <Font name="Segoe UI Bold" size="12.0" />
+                              </font></Label>
+                              <Circle fill="GREEN" radius="5" />
+                        </children>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </VBox>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
