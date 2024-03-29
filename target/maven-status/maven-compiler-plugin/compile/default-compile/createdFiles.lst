@@ -1,0 +1,11 @@
+org\openjfx\PrimaryController.class
+org\openjfx\Viaje.class
+org\openjfx\Recorrido.class
+org\openjfx\QuaternaryController.class
+org\openjfx\TertiaryController.class
+module-info.class
+org\openjfx\DataHolder.class
+org\openjfx\EstadoAplicacion.class
+org\openjfx\SecondaryController.class
+org\openjfx\EditarDistanciaController.class
+org\openjfx\App.class

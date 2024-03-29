@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import org.kordamp.ikonli.javafx.FontIcon;
+
 
 /**
  * JavaFX App
@@ -17,10 +19,10 @@ public class App extends Application {
 
     private static Scene scene;
 
-    private TertiaryController controller;
+    private TertiaryController controller;   
+
     @Override
-    public void start(Stage stage) throws IOException {
-        
+    public void start(Stage stage) throws IOException {        
         this.controller = new TertiaryController();
         EstadoAplicacion estado = cargarEstado(controller);
         String fxmlFile;
@@ -34,9 +36,7 @@ public class App extends Application {
         Parent root = loader.load();
         if (estado != null && estado.getControladorActual().equals("TertiaryController")) {
             TertiaryController controller = loader.getController();
-            controller.setViajes(estado.getViajes());
-            DataHolder dataHolder = DataHolder.getInstance();
-            controller.initViajes(dataHolder.getViajes());            
+            controller.setViajes(estado.getViajes());                    
         }
 
         scene = new Scene(root);
@@ -79,7 +79,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch();       
     }
 
 }

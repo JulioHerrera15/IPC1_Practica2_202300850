@@ -249,11 +249,7 @@ public class TertiaryController implements Initializable{
         gasolinaRestante = new double[viajes.size()];
         actualizarInterfazUsuario();
     }
-
-    public List<Viaje> getViajes() {
-        return viajes;
-    }
-    
+      
     public void iniciarViaje1() {
         new Thread(() -> {
             LocalDateTime fechaInicio = LocalDateTime.now();
@@ -510,8 +506,8 @@ public class TertiaryController implements Initializable{
     
 
     public void setViajes(List<Viaje> nuevosViajes) {
-        this.viajes = nuevosViajes;
-        initViajes(nuevosViajes);        
+        this.viajes = new ArrayList<>(nuevosViajes);
+        initViajes(this.viajes);        
     }
 
     public void actualizarDistancias() {
@@ -568,9 +564,7 @@ public class TertiaryController implements Initializable{
         }
     }
 
-   /* public void postSetViajes() {
-        initViajes();
-    }*/ 
+   
     
    
 
