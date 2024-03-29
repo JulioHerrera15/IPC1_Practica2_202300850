@@ -202,9 +202,9 @@ public class TertiaryController implements Initializable{
             String tipoVehiculo = viaje.getTransporte();
             ImageView imageview = new ImageView();
             imageViews[i] = imageview;
-    
+
             if ("Motocicleta 1".equals(tipoVehiculo) || "Motocicleta 2".equals(tipoVehiculo) || "Motocicleta 3".equals(tipoVehiculo)) {
-                try (InputStream stream = new FileInputStream("src/main/resources/org/openjfx/motocicleta.png")) {
+                try (InputStream stream = getClass().getClassLoader().getResourceAsStream("org/openjfx/motocicleta.png")) {
                     System.out.println("Imagen de motocicleta encontrada");
                     javafx.scene.image.Image image = new javafx.scene.image.Image(stream, 100,100, true, true);
                     imageview.setImage(image);
@@ -212,7 +212,7 @@ public class TertiaryController implements Initializable{
                     System.out.println("Imagen de motocicleta no encontrada");
                 }
             } else if ("Vehículo estándar 1".equals(tipoVehiculo) || "Vehículo estándar 2".equals(tipoVehiculo) || "Vehículo estándar 3".equals(tipoVehiculo)) {
-                try (InputStream stream = new FileInputStream("src/main/resources/org/openjfx/carroEstándar.png")) {
+                try (InputStream stream = getClass().getClassLoader().getResourceAsStream("org/openjfx/carroEstándar.png")) {
                     System.out.println("Imagen de carro estándar encontrada");
                     javafx.scene.image.Image image = new javafx.scene.image.Image(stream, 100,100, true, true);
                     imageview.setImage(image);
@@ -220,7 +220,7 @@ public class TertiaryController implements Initializable{
                     System.out.println("Imagen de carro estándar no encontrada");
                 }
             } else if ("Vehículo premium 1".equals(tipoVehiculo) || "Vehículo premium 2".equals(tipoVehiculo) || "Vehículo premium 3".equals(tipoVehiculo)) {
-                try (InputStream stream = new FileInputStream("src/main/resources/org/openjfx/carroPremium.png")) {
+                try (InputStream stream = getClass().getClassLoader().getResourceAsStream("org/openjfx/carroPremium.png")) {
                     System.out.println("Imagen de carro premium encontrada");
                     javafx.scene.image.Image image = new javafx.scene.image.Image(stream, 100,100, true, true);
                     imageview.setImage(image);
@@ -593,7 +593,7 @@ public class TertiaryController implements Initializable{
             initializeCarButton();
             initializeClockButton();
             // Carga la imagen
-            Image image = new Image("file:src/main/resources/org/openjfx/perfil.png");
+            Image image = new Image(getClass().getClassLoader().getResourceAsStream("org/openjfx/perfil.png"));
 
             // Crea un ImageView con la imagen
             ImageView imageView = new ImageView(image);

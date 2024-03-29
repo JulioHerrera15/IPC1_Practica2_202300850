@@ -193,9 +193,9 @@ public class SecondaryController implements Initializable{
         initializeHomeButton();
         initializePlusButton();
         initializeCarButton();
-        initializeClockButton();        
+        initializeClockButton();
         // Carga la imagen
-        Image image = new Image("file:src/main/resources/org/openjfx/perfil.png");
+        Image image = new Image(getClass().getClassLoader().getResourceAsStream("org/openjfx/perfil.png"));
 
         // Crea un ImageView con la imagen
         ImageView imageView = new ImageView(image);
